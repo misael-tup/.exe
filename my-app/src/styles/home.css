@@ -1,0 +1,5 @@
+body {
+  background-color: #1d1b1b; /* Color de fondo que desees */
+  margin: 0; /* Elimina el margen predeterminado del cuerpo para aprovechar completamente el fondo */
+  padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+}

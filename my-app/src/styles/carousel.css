@@ -1,0 +1,24 @@
+/* carousel.css */
+
+/* carousel.css */
+
+#carouselExampleIndicators {
+  max-width: 650px;
+  margin: auto;
+  height: 100vh;
+  overflow: hidden;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  align-self: center;
+}
+
+.carousel-inner img {
+  border-radius: 25px; /* Ajusta el valor según la cantidad de redondeo que desees */
+}
