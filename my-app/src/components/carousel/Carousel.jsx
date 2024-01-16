@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import "../../styles/carousel.css";
 import img_1 from "../../images/carrousel/1.png"
 import img_2 from "../../images/carrousel/2.png"
@@ -68,216 +69,112 @@ import img_65 from "../../images/carrousel/65.png"
 import img_66 from "../../images/carrousel/66.png"
 
 
-
 export default function Carousel() {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const images = [
+        img_1,
+        img_2,
+        img_3,
+        img_4,
+        img_5,
+        img_6,
+        img_7,
+        img_8,
+        img_9,
+        img_10,
+        img_11,
+        img_12,
+        img_13,
+        img_14,
+        img_15,
+        img_16,
+        img_17,
+        img_18,
+        img_19,
+        img_20,
+        img_21,
+        img_22,
+        img_23,
+        img_24,
+        img_25,
+        img_26,
+        img_27,
+        img_28,
+        img_29,
+        img_30,
+        img_31,
+        img_32,
+        img_33,
+        img_34,
+        img_35,
+        img_36,
+        img_37,
+        img_38,
+        img_39,
+        img_40,
+        img_41,
+        img_42,
+        img_43,
+        img_44,
+        img_45,
+        img_46,
+        img_47,
+        img_48,
+        img_49,
+        img_50,
+        img_51,
+        img_52,
+        img_53,
+        img_54,
+        img_55,
+        img_56,
+        img_57,
+        img_58,
+        img_59,
+        img_60,
+        img_61,
+        img_62,
+        img_63,
+        img_64,
+        img_65,
+        img_66
+    ];
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            // Cambiar a la siguiente imagen en el carrusel
+            setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 3700);
+
+        // Limpiar el intervalo al desmontar el componente
+        return () => clearInterval(intervalId);
+    }, []); // El array vacío asegura que el efecto se ejecute solo una vez al montar el componente
+
+    const handlePrevClick = () => {
+        // Manejar el clic del botón anterior
+        setActiveIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    const handleNextClick = () => {
+        // Manejar el clic del botón siguiente
+        setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
     return (
         <>
             <div id="carouselExampleIndicators" className="carousel slide">
                 <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src={img_1} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_2} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_3} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_4} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_5} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_6} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_7} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_8} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_9} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_10} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_11} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_12} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_13} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_14} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_15} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_16} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_17} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_18} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_19} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_20} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_21} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_22} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_23} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_24} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_25} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_26} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_27} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_28} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_29} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_30} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_31} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_32} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_33} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_34} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_35} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_36} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_37} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_38} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_39} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_40} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_41} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_42} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_43} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_44} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_45} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_46} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_47} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_48} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_49} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_50} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_51} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_52} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_53} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_54} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_55} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_56} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_57} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_58} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_59} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_60} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_61} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_62} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_63} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_64} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_65} className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src={img_66} className="d-block w-100" alt="..." />
-                    </div>
+                    {images.map((image, index) => (
+                        <div key={index} className={`carousel-item ${index === activeIndex ? 'active' : ''}`}>
+                            <img src={image} className="d-block w-100" alt={`Slide ${index + 1}`} />
+                        </div>
+                    ))}
                 </div>
                 <button
                     className="carousel-control-prev"
                     type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev"
+                    onClick={handlePrevClick}
                 >
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
@@ -285,8 +182,7 @@ export default function Carousel() {
                 <button
                     className="carousel-control-next"
                     type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next"
+                    onClick={handleNextClick}
                 >
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
