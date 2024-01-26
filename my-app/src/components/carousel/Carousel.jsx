@@ -67,6 +67,13 @@ import img_63 from "../../images/carrousel/63.png"
 import img_64 from "../../images/carrousel/64.png"
 import img_65 from "../../images/carrousel/65.png"
 import img_66 from "../../images/carrousel/66.png"
+import img_67 from "../../images/carrousel/67.png"
+import img_68 from "../../images/carrousel/68.png"
+import img_69 from "../../images/carrousel/69.png"
+import img_70 from "../../images/carrousel/70.png"
+import img_71 from "../../images/carrousel/71.png"
+import img_72 from "../../images/carrousel/72.png"
+import img_73 from "../../images/carrousel/73.png"
 
 
 export default function Carousel() {
@@ -138,18 +145,27 @@ export default function Carousel() {
         img_63,
         img_64,
         img_65,
-        img_66
+        img_66,
+        img_67,
+        img_68,
+        img_69,
+        img_70,
+        img_71,
+        img_72,
+        img_73
     ];
 
     useEffect(() => {
+        const intervalDuration = activeIndex === images.length - 1 ? 10000 : 3402;
+
         const intervalId = setInterval(() => {
             // Cambiar a la siguiente imagen en el carrusel
             setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 3700);
+        }, intervalDuration);
 
         // Limpiar el intervalo al desmontar el componente
         return () => clearInterval(intervalId);
-    }, []); // El array vacío asegura que el efecto se ejecute solo una vez al montar el componente
+    }, [activeIndex, images.length]);
 
     const handlePrevClick = () => {
         // Manejar el clic del botón anterior
